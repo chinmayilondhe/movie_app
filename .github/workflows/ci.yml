@@ -1,0 +1,43 @@
+name: News App CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Setup Java
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: '11.0.7'
+
+      # Setup Flutter
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '2.5.3'
+      - run: flutter pub get
+
+      # Build and test app
+      - name: Build and Test
+        run: |
+          flutter test
+          flutter build apk --debug --split-per-abi
+
+      # Upload APK
+      - name: Upload APK
+        uses: actions/upload-artifact@v2.2.0
+        with:
+          # Artifact name
+          name: news-app
+          # File path describing what artifact to upload
+          path: build/app/outputs/apk/debug/*.apk
