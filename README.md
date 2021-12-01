@@ -1,1 +1,1 @@
-# movie_app
+# news_app
