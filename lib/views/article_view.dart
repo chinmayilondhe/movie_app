@@ -45,6 +45,7 @@ class _ArticleViewState extends State<ArticleView> {
         centerTitle: true,
       ),
       body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: WebView(
