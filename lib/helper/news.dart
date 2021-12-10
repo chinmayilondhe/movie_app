@@ -44,6 +44,7 @@ class CategoryNewsclass {
     var data = jsonDecode(response.body);
     if (data['status'] == "ok") {
       data['articles'].forEach((ele) {
+
         if (ele['description'] != null && ele['urlToImage'] != " ") {
           ArticleModel articleModel = ArticleModel(
               author: ele["author"] ,
@@ -73,6 +74,8 @@ class SearchNews {
     if (data['status'] == "ok") {
       data['articles'].forEach((ele) {
         if (ele['description'] != null && ele['urlToImage'] != " ") {
+
+
           ArticleModel articleModel = ArticleModel(
               author: ele["author"] ,
               title: ele["title"] ,
@@ -85,6 +88,8 @@ class SearchNews {
       });
     }
   }
+
 }
+
 
 

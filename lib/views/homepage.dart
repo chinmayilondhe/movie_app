@@ -1,5 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:news_api/data.dart';
 import 'package:news_api/helper/blog.dart';
@@ -66,8 +68,7 @@ class _HomeState extends State<Home> {
               padding: EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   children: [
-                                      
-                   
+
                     //categories
                     Container(
                       
@@ -77,7 +78,9 @@ class _HomeState extends State<Home> {
                         scrollDirection: Axis.horizontal,
                         itemCount: categories.length,
                         itemBuilder: (context, index) {
+
                           return Card1(
+
                               imageUrl: categories[index].imageUrl,
                               categoryName: categories[index].categoryName);
                         },
@@ -93,6 +96,7 @@ class _HomeState extends State<Home> {
                       child:Card(
                         elevation: 3,
                         margin:EdgeInsets.all(3),
+
                       child: ListView.builder(
                         shrinkWrap: true,
                         physics: ClampingScrollPhysics(),
@@ -105,7 +109,9 @@ class _HomeState extends State<Home> {
                               url:articles[index].url??"",
           
                             );
+
                           }),)
+
                     ),
                   ],
                 ),
@@ -115,9 +121,11 @@ class _HomeState extends State<Home> {
   }
 }
 
+
 class Card1 extends StatelessWidget {
   final imageUrl, categoryName;
   Card1({required this.imageUrl, required this.categoryName});
+
 
   @override
   Widget build(BuildContext context) {

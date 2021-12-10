@@ -59,7 +59,9 @@ class _CategoryNewsState extends State<CategoryNews> {
           : SingleChildScrollView(
             child:Container(
         child: Container(
+
               padding: EdgeInsets.all(16),
+
               child: ListView.builder(
                   shrinkWrap: true,
                   physics: ClampingScrollPhysics(),
