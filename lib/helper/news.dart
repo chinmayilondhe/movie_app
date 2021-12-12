@@ -44,7 +44,8 @@ class CategoryNewsclass {
     var data = jsonDecode(response.body);
     if (data['status'] == "ok") {
       data['articles'].forEach((ele) {
-        if (ele['description'] != null && ele['urlToImage'] != null) {
+
+        if (ele['description'] != null && ele['urlToImage'] != " ") {
           ArticleModel articleModel = ArticleModel(
               author: ele["author"] ,
               title: ele["title"] ,
@@ -58,3 +59,37 @@ class CategoryNewsclass {
     }
   }
 }
+
+class SearchNews {
+  
+  List<ArticleModel> news = [];
+
+  Future<void> getNews(String search) async {
+    String url =
+        "https://newsapi.org/v2/top-headlines?q=$search&apiKey=0a726d4dbb664cc485326f7e537e2596";
+
+    http.Response response;
+    response = await http.get(Uri.parse(url));
+    var data = jsonDecode(response.body);
+    if (data['status'] == "ok") {
+      data['articles'].forEach((ele) {
+        if (ele['description'] != null && ele['urlToImage'] != " ") {
+
+
+          ArticleModel articleModel = ArticleModel(
+              author: ele["author"] ,
+              title: ele["title"] ,
+              desc: ele["description"] ,
+              url: ele["url"],
+              urlToImage: ele["urlToImage"],
+              content: ele["content"]);
+          news.add(articleModel);
+        }
+      });
+    }
+  }
+
+}
+
+
+
