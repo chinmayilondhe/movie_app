@@ -92,7 +92,7 @@ class _HomeState extends State<Home> {
                     //blogs
                     Container(
 
-                      padding:EdgeInsets.only(top:16),
+                      padding:EdgeInsets.all(8),
                       child:Card(
                         elevation: 3,
                         margin:EdgeInsets.all(3),

@@ -37,17 +37,15 @@ class _ArticleViewState extends State<ArticleView> {
           Opacity(
             opacity: 0,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Icon(Icons.save)),
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: Icon(Icons.save)),
           )
         ],
         elevation: 0,
         centerTitle: true,
       ),
       body: Container(
-
-        padding: EdgeInsets.symmetric(horizontal: 16),
-
+        padding: EdgeInsets.all(16),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: WebView(
