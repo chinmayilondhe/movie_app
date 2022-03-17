@@ -13,7 +13,7 @@ class Blog extends StatelessWidget {
           )));
       },
       child: Container(
-        margin: EdgeInsets.only(bottom: 20),
+        margin: EdgeInsets.all(16),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: Column(

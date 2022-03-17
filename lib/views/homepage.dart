@@ -91,8 +91,7 @@ class _HomeState extends State<Home> {
                      style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.black87 ),),
                     //blogs
                     Container(
-
-                      padding:EdgeInsets.only(top:16),
+                      padding:EdgeInsets.all(8),
                       child:Card(
                         elevation: 3,
                         margin:EdgeInsets.all(3),
