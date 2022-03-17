@@ -43,6 +43,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+
   carousel_slider:
     dependency: "direct main"
     description:
@@ -50,6 +51,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
+    
   characters:
     dependency: transitive
     description:
